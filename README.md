@@ -13,7 +13,7 @@
 
   uses curl, geoiplookup, sshfs, and systemd
 
-  to run this without a password
+  to run without a password
   
    `sudo visudo -f /etc/sudoers.d/your_username`
   
@@ -21,10 +21,10 @@
   
    `USERNAME ALL= NOPASSWD: /bin/systemctl start transmission-daemon.service`
    `USERNAME ALL= NOPASSWD: /bin/systemctl stop transmission-daemon.service`
-   `USERNAME ALL= NOPASSWD: /bin/systemctl start openvpn.service`
+   `USERNAME ALL= NOPASSWD: /bin/systemctl start openvpn.service`              
    `USERNAME ALL= NOPASSWD: /bin/systemctl stop openvpn.service`
 
-  to run this at boot use: 
+  to run at boot use: 
    
     crontab -e
    
