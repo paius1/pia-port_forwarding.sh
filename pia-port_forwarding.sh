@@ -46,7 +46,7 @@
     pIA_LOCATIONS=( 'CA' 'FR' 'DE' 'ES' 'CH' 'CZ' 'SE' 'RO' 'IL' )
 
   # wait for connections
-    tIMEOUT=10
+    tIMEOUT='10'
 
   # change transmission-daemon settings
     tRANSMISSION='yes' # yes/no or empty
@@ -56,10 +56,10 @@
     nETWORK_SHARES='yes' # yes/no or empty
       cREATE_DIRECTORIES='no'
     # Add shares here
-    # ['share#']="user       host    /remote/share             /mount/point"
-      declare -A sHARES=(
-      ['share1']="user       host    /remote/share        /mount/point"
-      )
+    # ['share#']="user       host    /remote/share        /mount/point"
+      #declare -A sHARES=(
+      #['share1']="user      host    /remote/share        /mount/point"
+      #)
 
   # colors for output    
     BLU="\\e[01;34m"; RED="\\e[01;31m"; NRM="\\e[00m"; GRN="\\e[01;32m"
