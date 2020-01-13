@@ -8,7 +8,7 @@
 #   
 #  This script can also
 #   start the transmission-daemon with the forwarded port
-#   and mount any network shares $pFLOG
+#   and mount any network shares
 #
 #  uses curl, geoiplookup, sshfs, and systemd
 #
@@ -53,7 +53,7 @@
       sETTINGS="${HOME}/.config/transmission-daemon/settings.json"
 
   # check network shares are mounted
-    nETWORK_SHARES='yes' # yes/no or empty
+    nETWORK_SHARES='no' # yes/no or empty
       cREATE_DIRECTORIES='no'
     # Add shares here
     # ['share#']="user       host    /remote/share        /mount/point"
