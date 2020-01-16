@@ -61,18 +61,17 @@
       #['share1']="user      host    /remote/share        /mount/point"
       #)
 
-  # colors for output    
-    BLU="\\e[01;34m"; RED="\\e[01;31m"; NRM="\\e[00m"; GRN="\\e[01;32m"
-    YLW="\\e[01;33m"; Blink="\\e[5m"; BLD="\\e[01m"; DIM="\\e[2m"
-
-  function _help() {
+ if [ "${#}" -ne 0 ]; then
     echo -e >&2 "\\n    ${BASH_SOURCE##*/}"
     sed >&2 -n "1d; /^###/q; /^#/!q; s/^#*//; s/^ //; \
         s/SCRIPTNAME/${BASH_SOURCE##*/}/; p" \
         "${BASH_SOURCE%/*}/${BASH_SOURCE##*/}"
-  return 0
-}
-[ "${#}" -eq 1 ] && { _help; exit 1; }
+    exit 0
+ fi
+ 
+  # colors for output    
+    BLU="\\e[01;34m"; RED="\\e[01;31m"; NRM="\\e[00m"; GRN="\\e[01;32m"
+    YLW="\\e[01;33m"; Blink="\\e[5m"; BLD="\\e[01m"; DIM="\\e[2m"
 
 # log output call with:  _output_log "message" "${pFLOG}"
   function _output_log() {
@@ -94,7 +93,7 @@
                       "${message}" \
                       "${pFLOG}"
                       sudo /bin/systemctl stop "${oPENVPN}" && sudo /bin/systemctl start "${oPENVPN}"
-                      exec "${mE}" &
+                      "${mE}" &
                       kill "${pIDOFME}"
                      ;;
                esac
